@@ -25,21 +25,36 @@ print("Your mission is to find the treasure.")
 
 #https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
 
-step1 = input(print("You are at cross road go LEFT or RIGHT? "))
+step1 = input("You are at cross road go LEFT or RIGHT? ")
+
 if step1.lower() == "left":
 
-    step2 = input(print("You arrived at a lake. SWIM or WAIT? "))
+    step2 = input("You arrived at a lake. SWIM or WAIT? ")
 
 else:
 
     print("Fall into a hole! Game Over!")
     exit()
 
-    if step2.lower() == "wait":
+if step2.lower() == "wait":
 
-       step3 = print("You in the distance 3 houses. One with a RED door, the other with a BLUE door and the other with a YELLOW door. Which door do you open? ")
+       step3 = input("You in the distance 3 houses. One with a RED door, the other with a BLUE door and the other with a YELLOW door. Which door do you open? ")
+    
+else:
+    print("Attacked by a trout! Game Over!")
+    exit()
 
-       if step3.lower() == "yellow":
+if step3.lower() == "yellow":
 
-          print("You win!")  
+    print("You win!")
 
+elif step3.lower() == "red":
+
+    print("Burned by fire! Game Over!")
+        
+elif step3.lower() == "blue":
+
+    print("Eaten by beasts! Game Over!")
+
+else:
+    print("Game Over!")
