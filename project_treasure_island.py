@@ -57,4 +57,4 @@ elif step3.lower() == "blue":
     print("Eaten by beasts! Game Over!")
 
 else:
-    print("Game Over!")
+    print("Game Over.")
