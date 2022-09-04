@@ -22,6 +22,7 @@ player_lives = 0
 while ("_" in solution) and (player_lives < 6):
 
     guess = input("Guess letter: ").lower()
+    #clear the console
     os.system("cls")
 
     if guess not in player_guesses:
