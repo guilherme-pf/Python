@@ -16,4 +16,4 @@ def greet3(name, location):
 
 greet3("Gui", "Piraciaba")
 
-#test
+greet3(location="Pira", name="Gui")
