@@ -10,7 +10,6 @@ while other_bidders == "y":
     bids[key] = value
     other_bidders = input("Are there any other bidders? y or n.\n")
 
-
 highest_bid = 0
 winner = ""
 
