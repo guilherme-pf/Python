@@ -20,7 +20,7 @@ def add_new_country(country, visits, cities):
     new_log["country"] = country
     new_log["visits"] = visits
     new_log["cities"] = cities
-    travel_log.append(new_log)git add
+    travel_log.append(new_log)
 
 #🚨 Do not change the code below
 add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
