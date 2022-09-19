@@ -1,3 +1,5 @@
+from art import logo
+
 def add(n1, n2):
     return n1 + n2
 
@@ -20,7 +22,9 @@ operations = {
 
 def calculator():
 
-    num1 = int(input("What's the first number?: "))
+    print(logo)
+
+    num1 = float(input("What's the first number?: "))
 
     for symbols in operations:
         print(symbols)
@@ -29,16 +33,20 @@ def calculator():
 
     while should_continue:
         operation_symbol = input("Pick an operation: ")
-        num2 = int(input("Whats's the next number?: "))
+        num2 = float(input("Whats's the next number?: "))
         answer = operations[operation_symbol](num1,num2) # call the function add/subtract/divide/multiply based on the key/value fro the dictionary
 
         print(f"{num1} {operation_symbol} {num2} = {answer}")
 
-        if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a neu calculation.: ") == "y":
+        cont = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a neu calculation or type 'e' to exit.: ")
+        
+        if cont == "y":
             num1 = answer
-        else:
+        elif cont == "n":
             should_continue = False
             calculator() #recursion to start a new calculation
+        else:
+            return
 
 calculator()
 
