@@ -60,37 +60,38 @@ def blackjack():
             print(f"Your cards: {players_cards}, current score: {player_score}")
             print(f"Computer's first card: {computer_card1}")
 
-        else:
-            while computer_score < 17:
-                computer_card = random.choice(cards)
-                computer_score += computer_card
-                computers_cards.append(computer_card)
 
-                if computer_score > 21 and 11 in computers_cards:
-                    computers_cards.remove(11)
-                    computers_cards.append(1)
+    while computer_score < 17:
+        computer_card = random.choice(cards)
+        computer_score += computer_card
+        computers_cards.append(computer_card)
 
-                    computer_score = sum(computers_cards)
-                    
+        if computer_score > 21 and 11 in computers_cards:
+            computers_cards.remove(11)
+            computers_cards.append(1)
+
             computer_score = sum(computers_cards)
 
-            if player_score == computer_score:
-                print(f"Your cards: {players_cards}, current score: {player_score}")
-                print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
-                print("Draw 🙃")
-          
-            elif computer_score > player_score and computer_score <= 21:
-                print(f"Your cards: {players_cards}, current score: {player_score}")
-                print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
-                print("You lose 😒")
-            else:
-                print(f"Your cards: {players_cards}, current score: {player_score}")
-                print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
-                print("You win 😀")
-                
-    if player_score > 21:
+    computer_score = sum(computers_cards)
+
+    if player_score == computer_score:
+        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
+        print("Draw 🙃")
+
+    elif player_score > 21:
         print(f"Your cards: {players_cards}, current score: {player_score}")
         print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
         print("You went over you lose 😒")
-
+    
+    elif computer_score > player_score and computer_score <= 21:
+        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
+        print("You lose 😒")
+    else:
+        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
+        print("You win 😀")
+            
 blackjack()
+
