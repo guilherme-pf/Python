@@ -75,21 +75,21 @@ def blackjack():
     computer_score = sum(computers_cards)
 
     if player_score == computer_score:
-        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Your cards: {players_cards}, final score: {player_score}")
         print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
         print("Draw 🙃")
 
     elif player_score > 21:
-        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Your cards: {players_cards}, final score: {player_score}")
         print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
         print("You went over you lose 😒")
     
     elif computer_score > player_score and computer_score <= 21:
-        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Your cards: {players_cards}, final score: {player_score}")
         print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
         print("You lose 😒")
     else:
-        print(f"Your cards: {players_cards}, current score: {player_score}")
+        print(f"Your cards: {players_cards}, final score: {player_score}")
         print(f"Computer's final hand: {computers_cards}, final score: {computer_score}")
         print("You win 😀")
             
