@@ -1,5 +1,6 @@
 
 #incomplete version, missing logic to substitute 11 for 1, when sum over 21.
+from os import remove
 from art import logo
 import random
 
@@ -24,8 +25,19 @@ def blackjack():
     players_cards.extend([player_card1, player_card2])
     computers_cards.extend([computer_card1,computer_card2])
 
-    player_score = player_card1 + player_card2
-    computer_score = computer_card1 + computer_card2
+    player_score = sum(players_cards)
+    computer_score = sum(computers_cards)
+
+    if player_score > 21 and 11 in players_cards:
+        players_cards.remove(11)
+        players_cards.append(1)
+
+    if computer_score > 21 and 11 in computers_cards:
+        computers_cards.remove(11)
+        computers_cards.append(1)
+
+    player_score = sum(players_cards)
+    computer_score = sum(computers_cards)
 
     print(f"Your cards: {players_cards}, current score: {player_score}")
     print(f"Computer's first card: {computer_card1}")
@@ -41,8 +53,19 @@ def blackjack():
             players_cards.append(player_card)
             computers_cards.append(computer_card)
             
-            player_score += player_card
-            computer_score += computer_card
+            player_score = sum(players_cards)
+            computer_score = sum(computers_cards)
+
+            if player_score > 21 and 11 in players_cards:
+                players_cards.remove(11)
+                players_cards.append(1)
+
+            if computer_score > 21 and 11 in computers_cards:
+                computers_cards.remove(11)
+                computers_cards.append(1)
+
+            player_score = sum(players_cards)
+            computer_score = sum(computers_cards)
 
             print(f"Your cards: {players_cards}, current score: {player_score}")
             print(f"Computer's first card: {computer_card1}")
@@ -52,6 +75,12 @@ def blackjack():
                 computer_card3 = random.choice(cards)
                 computer_score += computer_card3
                 computers_cards.append(computer_card3)
+
+                if computer_score > 21 and 11 in computers_cards:
+                    computers_cards.remove(11)
+                    computers_cards.append(1)
+
+                    computer_score = sum(computers_cards)
 
             if player_score == computer_score:
                 print(f"Your cards: {players_cards}, current score: {player_score}")
