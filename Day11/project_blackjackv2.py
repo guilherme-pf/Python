@@ -33,6 +33,7 @@
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 #11 is the Ace.
 import random
+from art import logo
 
 def deal_card():
   """Returns a random card from the deck."""
@@ -78,6 +79,8 @@ def compare(user_score, computer_score):
     return "You lose 😤"
 
 def play_game():
+
+  print(logo)
 
   #Hint 5: Deal the user and computer 2 cards each using deal_card()
   user_cards = []
