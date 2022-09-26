@@ -3,7 +3,7 @@ from art import logo
 import random
 
 
-play = input("Do you want to play a game of Blackhack? Type 'y' or 'n': ").lower()
+play = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
 
 if play == "y":
     print(logo)
