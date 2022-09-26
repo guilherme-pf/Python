@@ -1,6 +1,5 @@
-from game_data import data
+from game_data import data, vs
 import random
-from art import logo, vs
 import sys, os
 
 def get_random_account():
