@@ -37,7 +37,7 @@ game_list = [rock, paper, scissors]
 while True:
     try:
         players_input = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n"))
-        if players_input > 0 and players_input < 3:
+        if players_input >=00 and players_input < 3:
             break
     except:
         print("", end="")
